@@ -28,8 +28,7 @@ tr {
 			<th>Age</th>
 			<th>Email</th>
 		</tr>
-		<c:forEach var="person" items="${requestScope.persons}"
-			varStatus="loopCounter">
+		<c:forEach var="person" items="${requestScope.persons}" varStatus="loopCounter">
 		<tr>
 			<td><c:out value="${loopCounter.count}" /></td>
 			<td><c:out value="${person.name}" /></td>
