@@ -23,6 +23,7 @@ public class SpringTilesController {
 	@RequestMapping(value="index")
 	public ModelAndView index(Model model) {
 		
+		//傳送至ersonList.jsp 資料
 		Map<String, List<Map<String,String>>> data = new HashMap<String, List<Map<String,String>>>();
 		
 		List<Map<String,String>> persons = new ArrayList<Map<String,String>>();
@@ -34,6 +35,20 @@ public class SpringTilesController {
 		persons.add(values1);
 		
 		data.put("persons", persons);
+		
+		//傳送至SiteTemplate.jsp 資料
+		List<Map<String,String>> manus = new ArrayList<Map<String,String>>();
+		
+		Map<String,String> manus1 = new HashMap<String,String>();
+		manus1.put("id", "/index");
+		manus1.put("name", "index");
+		manus.add(manus1);
+		Map<String,String> manus2 = new HashMap<String,String>();
+		manus2.put("id", "/viewPeson");
+		manus2.put("name", "viewPeson");
+		manus.add(manus2);
+		
+		data.put("manus", manus);
 		
 		return new ModelAndView("personList", data);
 	}
